@@ -1,0 +1,60 @@
+Iniciar o projeto padrão
+    --->>> yarn init -Y
+Instalar o express
+    --->>> yarn add express
+Instalar a tipagem do express
+    --->>> yarn add @types/express -D
+Instalar o typescript(usado somente desenvolvimento)
+    --->>> yarn add typescript -D
+    Configurar o typescript
+       -->> yarn tsc --init
+           ( definir o "strict": false, )
+Instalar o tradutor do node para typescript(usado somente desenvolvimento)
+    --->>> yarn add ts-node-dev -D
+    -->> Criar um script para o ts-node rodar na aplicação
+    Criar no packge.json
+        "scripts": {
+            "dev": "ts-node-dev src/server.ts"
+        },
+Instalar o typeorm e suas dependências e o driver do SQLite3
+    -->> yarn add typeorm --save
+    -->> yarn add reflect-metadata --save
+    -->> yarn add sqlite3 --save
+Criar o arquivo de configuração ormconfig.json
+Utilizar o typeorm
+    -->>Criar um Migration
+        yarn typeorm migration:create -n CreateSettings
+            -->> yarn typeorm migration:run -> executa o run
+            -->> yarn typeorm migration:revert ->  executa o down
+    descomentar no tsconfig.json o erro de decorators
+Instalar o BeeKeeper para visualizar o banco de dados sqlite3
+Instalar o uuid
+    -->> yarn add uuid 
+    Tipagem --> yarn add @types/uuid -D
+Mapear as entidades no ormconfig.json
+Criar os repositorios
+Criar os controllers
+Criar os services
+
+-->> Criar um Migration 
+        yarn typeorm migration:create -n CreateUsers
+        -->> yarn typeorm migration:run -> executa o run
+
+-->> Criar um Migration 
+        yarn typeorm migration:create -n CreateMessages
+        -->> yarn typeorm migration:run -> executa o run
+
+WebSocket
+ lib socket.io
+ Instalar 
+    -->> yarn add socket.io
+    -->> yarn add @types/socket.io
+    -->> yarn add ejs
+    -->> yarn add socket.io-client
+Criar os WebSocket
+    --> client
+    --> admin
+
+--> Criar a tabela de conexão
+    yarn typeorm migration:create -n CreateConnections
+    -->> yarn typeorm migration:run -> executa o run
